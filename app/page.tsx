@@ -1,3 +1,9 @@
+import Header from "./components/header";
+
 export default function Home() {
-  return <main>Initial config</main>;
+  return (
+    <main className="py-2 px-36">
+      <Header />
+    </main>
+  );
 }
