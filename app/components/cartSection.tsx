@@ -14,6 +14,7 @@ export default function CartSection() {
       <Image
         src={cart}
         alt="cart logo"
+        color={!isOpen ? "#69707D" : "#000000"}
         className="hover:cursor-pointer"
         onClick={() => {
           !isOpen ? setIsOpen(true) : setIsOpen(false);

@@ -5,3 +5,11 @@
 nav li {
   @apply text-Grayish-blue hover:cursor-pointer hover:text-Dark-grayish-blue hover:border-b-2 hover:border-Orange relative py-8;
 }
+
+.thumb-images {
+  @apply flex gap-6 items-center;
+}
+
+.thumb-images label {
+  @apply has-[:checked]:border-2 has-[:checked]:border-Orange has-[:checked]:opacity-50 rounded-xl hover:opacity-60 transition-all ease-in-out;
+}
