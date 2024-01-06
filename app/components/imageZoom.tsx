@@ -1,9 +1,7 @@
-"use client";
 //next imports
-import { useContext, useState } from "react";
 import Image from "next/image";
-//context
-import ZoomContext from "../context/zoomContext";
+import { useContext, useState } from "react";
+
 //media
 import product1 from "@/images/image-product-1-thumbnail.jpg";
 import product2 from "@/images/image-product-2-thumbnail.jpg";
@@ -15,18 +13,26 @@ import mainProduct2 from "@/images/image-product-2.jpg";
 import mainProduct3 from "@/images/image-product-3.jpg";
 import mainProduct4 from "@/images/image-product-4.jpg";
 
-export default function ProductImages() {
-  const { setIsZoom, isZoom } = useContext(ZoomContext);
+import closewhite from "@/images/icon-close-white.svg";
+import closeorange from "@/images/icon-close-orange.svg";
+import ZoomContext from "../context/zoomContext";
+
+export default function ImageZoom() {
   const [mainImage, setMainImage] = useState(mainProduct1);
-  console.log(isZoom);
+  const [closeIcon, setCloseIcon] = useState(closewhite);
+  const { setIsZoom } = useContext(ZoomContext);
+
   return (
-    <section className="w-1/3">
+    <section className="absolute z-50 w-1/3 top-14 right-[520px] shadow-[0_35px_100px_808px_rgba(0,0,0,0.6)] rounded-xl bg-black/60">
       <Image
-        src={mainImage}
-        alt="PrincipalImage"
-        className="rounded-xl mb-6 hover:cursor-pointer hover:scale-105 transition-all ease-in-out"
-        onClick={() => (!isZoom ? setIsZoom(true) : setIsZoom(false))}
+        src={closeIcon}
+        onMouseEnter={() => setCloseIcon(closeorange)}
+        onMouseLeave={() => setCloseIcon(closewhite)}
+        onClick={() => setIsZoom(false)}
+        alt="close icons"
+        className="absolute -top-10 right-2 "
       />
+      <Image src={mainImage} alt="PrincipalImage" className="rounded-xl mb-6" />
       <fieldset className="thumb-images">
         <label onClick={() => setMainImage(mainProduct1)}>
           <input
