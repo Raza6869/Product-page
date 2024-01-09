@@ -1,14 +1,23 @@
 "use client";
 //next imports
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
+//context
+import ProductContext from "../context/productContext";
 //media
 import plus from "@/images/icon-plus.svg";
 import less from "@/images/icon-minus.svg";
 import whiteCart from "@/images/icon-cart-white.svg";
 
 export default function AddProduct() {
+  const { setHaveProduct, setProductAmount, productAmount } =
+    useContext(ProductContext);
   const [amount, setAmount] = useState(0);
+
+  const addProduct = () => {
+    setHaveProduct(true);
+    setProductAmount(productAmount + amount);
+  };
 
   return (
     <div className="flex font-bold gap-4">
@@ -31,7 +40,10 @@ export default function AddProduct() {
           }}
         />
       </div>
-      <button className="bg-Orange items-center text-White flex justify-center h-14 w-full gap-3 rounded-2xl shadow-[0_35px_100px_-18px_rgba(255,124,25,0.6)] hover:bg-Orange/60  transition-all ease-in-out">
+      <button
+        onClick={addProduct}
+        className="bg-Orange items-center text-White flex justify-center h-14 w-full gap-3 rounded-2xl shadow-[0_35px_100px_-18px_rgba(255,124,25,0.6)] hover:bg-Orange/60  transition-all ease-in-out"
+      >
         <Image src={whiteCart} alt="cart icon" />
         Add to cart
       </button>
