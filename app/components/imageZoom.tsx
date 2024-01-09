@@ -21,11 +21,38 @@ import nexticonorange from "@/images/icon-next-orange.svg";
 import ZoomContext from "../context/zoomContext";
 
 export default function ImageZoom() {
+  const { setIsZoom } = useContext(ZoomContext);
   const [mainImage, setMainImage] = useState(mainProduct1);
+
   const [closeIcon, setCloseIcon] = useState(closewhite);
   const [nextIcon, setNextIcon] = useState(nexticon);
   const [backIcon, setBackIcon] = useState(nexticon);
-  const { setIsZoom } = useContext(ZoomContext);
+
+  const previousImage = () => {
+    if (mainImage === mainProduct1) {
+      setMainImage(mainProduct4);
+    } else if (mainImage === mainProduct2) {
+      setMainImage(mainProduct1);
+    } else if (mainImage === mainProduct3) {
+      setMainImage(mainProduct2);
+    }
+    if (mainImage === mainProduct4) {
+      setMainImage(mainProduct3);
+    }
+  };
+
+  const nextImage = () => {
+    if (mainImage === mainProduct1) {
+      setMainImage(mainProduct2);
+    } else if (mainImage === mainProduct2) {
+      setMainImage(mainProduct3);
+    } else if (mainImage === mainProduct3) {
+      setMainImage(mainProduct4);
+    }
+    if (mainImage === mainProduct4) {
+      setMainImage(mainProduct1);
+    }
+  };
 
   return (
     <section className="absolute z-50 w-1/3 top-14 right-[520px] shadow-[0_35px_100px_808px_rgba(0,0,0,0.6)] rounded-xl bg-black/60">
@@ -99,9 +126,11 @@ export default function ImageZoom() {
       </fieldset>
       <div className="w-full ">
         <button
+          title="back button"
           onMouseEnter={() => setBackIcon(nexticonorange)}
           onMouseLeave={() => setBackIcon(nexticon)}
-          className="bg-white rounded-full h-10 w-10 flex items-center justify-center absolute z-50 top-48 -left-5"
+          onClick={previousImage}
+          className="bg-white rounded-full h-10 w-10 flex items-center justify-center absolute z-50 top-56 -left-5"
         >
           <Image
             src={backIcon}
@@ -110,9 +139,11 @@ export default function ImageZoom() {
           />
         </button>
         <button
+          title="next button"
           onMouseEnter={() => setNextIcon(nexticonorange)}
           onMouseLeave={() => setNextIcon(nexticon)}
-          className="bg-white rounded-full h-10 w-10 flex items-center justify-center absolute z-50 top-48 -right-5"
+          onClick={nextImage}
+          className="bg-white rounded-full h-10 w-10 flex items-center justify-center absolute z-50 top-56 -right-5"
         >
           <Image src={nextIcon} alt="icon next" className="h-3 w-fit" />
         </button>
