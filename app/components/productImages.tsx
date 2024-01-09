@@ -14,11 +14,12 @@ import mainProduct1 from "@/images/image-product-1.jpg";
 import mainProduct2 from "@/images/image-product-2.jpg";
 import mainProduct3 from "@/images/image-product-3.jpg";
 import mainProduct4 from "@/images/image-product-4.jpg";
+import ImageZoom from "./imageZoom";
 
 export default function ProductImages() {
   const { setIsZoom, isZoom } = useContext(ZoomContext);
   const [mainImage, setMainImage] = useState(mainProduct1);
-  console.log(isZoom);
+
   return (
     <section className="w-1/3">
       <Image
@@ -86,6 +87,7 @@ export default function ProductImages() {
           />
         </label>
       </fieldset>
+      {isZoom && <ImageZoom />}
     </section>
   );
 }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 nav li {
-  @apply text-Grayish-blue hover:cursor-pointer hover:text-Dark-grayish-blue hover:border-b-2 hover:border-Orange relative py-8;
+  @apply text-Grayish-blue hover:cursor-pointer hover:text-Dark-grayish-blue hover:border-b-2 hover:border-Orange hover:py-7 relative py-8;
 }
 
 .thumb-images {

@@ -15,11 +15,16 @@ import mainProduct4 from "@/images/image-product-4.jpg";
 
 import closewhite from "@/images/icon-close-white.svg";
 import closeorange from "@/images/icon-close-orange.svg";
+import nexticon from "@/images/icon-next.svg";
+import nexticonorange from "@/images/icon-next-orange.svg";
+//context
 import ZoomContext from "../context/zoomContext";
 
 export default function ImageZoom() {
   const [mainImage, setMainImage] = useState(mainProduct1);
   const [closeIcon, setCloseIcon] = useState(closewhite);
+  const [nextIcon, setNextIcon] = useState(nexticon);
+  const [backIcon, setBackIcon] = useState(nexticon);
   const { setIsZoom } = useContext(ZoomContext);
 
   return (
@@ -30,7 +35,7 @@ export default function ImageZoom() {
         onMouseLeave={() => setCloseIcon(closewhite)}
         onClick={() => setIsZoom(false)}
         alt="close icons"
-        className="absolute -top-10 right-2 "
+        className="absolute -top-10 right-0 hover:cursor-pointer"
       />
       <Image src={mainImage} alt="PrincipalImage" className="rounded-xl mb-6" />
       <fieldset className="thumb-images">
@@ -92,6 +97,26 @@ export default function ImageZoom() {
           />
         </label>
       </fieldset>
+      <div className="w-full ">
+        <button
+          onMouseEnter={() => setBackIcon(nexticonorange)}
+          onMouseLeave={() => setBackIcon(nexticon)}
+          className="bg-white rounded-full h-10 w-10 flex items-center justify-center absolute z-50 top-48 -left-5"
+        >
+          <Image
+            src={backIcon}
+            alt="icon previous"
+            className="rotate-180 h-3 w-fit"
+          />
+        </button>
+        <button
+          onMouseEnter={() => setNextIcon(nexticonorange)}
+          onMouseLeave={() => setNextIcon(nexticon)}
+          className="bg-white rounded-full h-10 w-10 flex items-center justify-center absolute z-50 top-48 -right-5"
+        >
+          <Image src={nextIcon} alt="icon next" className="h-3 w-fit" />
+        </button>
+      </div>
     </section>
   );
 }
