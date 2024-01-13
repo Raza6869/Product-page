@@ -20,8 +20,8 @@ export default function AddProduct() {
   };
 
   return (
-    <div className="flex font-bold gap-4">
-      <div className="flex bg-Light-grayish-blue p-2 w-52 justify-around items-center">
+    <div className="flex sm:flex-row flex-col justify-center items-center font-bold gap-4">
+      <div className="flex bg-Light-grayish-blue p-2 sm:w-52 w-full justify-around items-center">
         <Image
           src={less}
           alt="minus icon"
@@ -42,7 +42,7 @@ export default function AddProduct() {
       </div>
       <button
         onClick={addProduct}
-        className="bg-Orange items-center text-White flex justify-center h-14 w-full gap-3 rounded-2xl shadow-[0_35px_100px_-18px_rgba(255,124,25,0.6)] hover:bg-Orange/60  transition-all ease-in-out"
+        className="bg-Orange items-center text-White flex justify-center sm:mb-0 mb-14 h-14 w-full gap-3 rounded-2xl shadow-[0_35px_100px_-18px_rgba(255,124,25,0.6)] hover:bg-Orange/60  transition-all ease-in-out"
       >
         <Image src={whiteCart} alt="cart icon" />
         Add to cart

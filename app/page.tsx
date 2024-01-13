@@ -14,10 +14,10 @@ export default function Home() {
   return (
     <ProductProvider>
       <ZoomProvider>
-        <main className="py-2 px-36">
+        <main className="sm:py-2 sm:px-36 ">
           <Header />
           <div className="flex flex-col sm:flex-row w-full justify-around items-center h-[75vh] ">
-            {DeviceSize() < 678 ? <MobileProductImages /> : <ProductImages />}
+            {DeviceSize() < 628 ? <MobileProductImages /> : <ProductImages />}
             <ProductInfo />
           </div>
         </main>

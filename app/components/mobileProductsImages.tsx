@@ -21,8 +21,7 @@ export default function MobileProductImages() {
       setMainImage(mainProduct1);
     } else if (mainImage === mainProduct3) {
       setMainImage(mainProduct2);
-    }
-    if (mainImage === mainProduct4) {
+    } else if (mainImage === mainProduct4) {
       setMainImage(mainProduct3);
     }
   };
@@ -34,22 +33,32 @@ export default function MobileProductImages() {
       setMainImage(mainProduct3);
     } else if (mainImage === mainProduct3) {
       setMainImage(mainProduct4);
-    }
-    if (mainImage === mainProduct4) {
+    } else if (mainImage === mainProduct4) {
       setMainImage(mainProduct1);
     }
   };
+
   return (
-    <div>
+    <div className="mt-80">
       <div>
-        <button onClick={previousImage} className="rounded-full bg-white">
-          <Image src={previousIcon} alt="previous icon" />
+        <button
+          onClick={previousImage}
+          className="rounded-full hover:cursor-pointer bg-white absolute top-56 left-2"
+        >
+          <Image
+            src={previousIcon}
+            alt="previous icon"
+            className="m-3 h-3 w-fit"
+          />
         </button>
-        <button onClick={nextImage} className="rounded-full bg-white">
-          <Image src={nextIcon} alt="previous icon" />
+        <button
+          onClick={nextImage}
+          className="rounded-full hover:cursor-pointer bg-white absolute top-56 right-2"
+        >
+          <Image src={nextIcon} alt="previous icon" className="m-3 h-3 w-fit" />
         </button>
       </div>
-      <Image src={mainImage} alt="product image" />
+      <Image src={mainImage} alt="product image" className="w-full" />
     </div>
   );
 }

@@ -12,22 +12,18 @@ export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex">
+    <div className="flex bg-White w-full">
       <div className="flex items-center justify-center">
         <Image
           src={!isOpen ? menuopen : menuclose}
           alt="icon menu"
-          className="absolute top-6 left-5 z-50 transition-all ease-in-out duration-300 "
+          className="relative top-[1px] h-[14px] w-fit left-5 z-50 transition-all ease-in-out duration-300 "
           onClick={() => {
             !isOpen ? setIsOpen(true) : setIsOpen(false);
           }}
         />
         <Link href={"/"}>
-          <Image
-            src={logo}
-            alt="sneakres logo"
-            className="absolute left-12 top-5"
-          />
+          <Image src={logo} alt="sneakres logo" className="ml-8 h-4 w-fit" />
         </Link>
       </div>
       <nav>

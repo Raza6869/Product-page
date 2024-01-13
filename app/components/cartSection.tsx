@@ -15,9 +15,9 @@ export default function CartSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartIcon, setCartIcon] = useState(cart);
   return (
-    <div className="flex items-center sm:gap-8 gap-4">
+    <div className="flex items-center sm:gap-8 gap-4 sm:mr-0 mr-5">
       {haveProduct && (
-        <div className="text-[9px] rounded-md text-White bg-Orange px-2 absolute z-50 sm:top-9 sm:right-52 top-4 right-16">
+        <div className="text-[9px] rounded-md text-White bg-Orange px-2 absolute z-50 sm:top-9 sm:right-52 top-4 right-10">
           {productAmount}
         </div>
       )}

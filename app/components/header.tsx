@@ -11,7 +11,7 @@ import MobileHeader from "./mobileHeader";
 
 export default function Header() {
   return (
-    <header className="flex justify-between border-b-2 border-Light-grayish-blue sm:h-auto h-12 sm:w-auto w-64">
+    <header className="flex justify-between border-b-2 border-Light-grayish-blue sm:h-auto h-16 sm:w-auto bg-white z-50 sm:static fixed w-full">
       {DeviceSize() < 648 ? (
         <MobileHeader />
       ) : (
