@@ -15,9 +15,9 @@ export default function CartSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartIcon, setCartIcon] = useState(cart);
   return (
-    <div className="flex items-center gap-8">
+    <div className="flex items-center sm:gap-8 gap-4">
       {haveProduct && (
-        <div className="text-[9px] rounded-md text-White bg-Orange px-2 absolute z-50 top-9 right-52">
+        <div className="text-[9px] rounded-md text-White bg-Orange px-2 absolute z-50 sm:top-9 sm:right-52 top-4 right-16">
           {productAmount}
         </div>
       )}
@@ -38,7 +38,7 @@ export default function CartSection() {
       <Image
         src={avatar}
         alt="avatar logo"
-        className="h-10 w-fit hover:cursor-pointer hover:border-[1px] hover:border-Orange rounded-full"
+        className="sm:h-10 h-6 w-fit hover:cursor-pointer hover:border-[1px] hover:border-Orange rounded-full"
       />
       {isOpen === true && <Cart />}
     </div>

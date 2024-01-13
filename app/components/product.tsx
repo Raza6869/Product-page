@@ -18,14 +18,14 @@ export default function Product() {
     setHaveProduct(false);
   };
   return (
-    <div className="flex flex-col items-center h-36 justify-center px-4">
-      <div className="flex justify-center items-center gap-3">
+    <div className="flex flex-col items-center sm:h-36 h-44 justify-center px-4">
+      <div className="flex sm:justify-center justify-between w-full items-center gap-3 ">
         <Image
           src={productImage}
           alt="product image"
-          className="h-12 w-fit rounded-lg"
+          className="sm:h-12 h-14 w-fit rounded-lg"
         />
-        <div className="text-Grayish-blue text-sm">
+        <div className="text-Grayish-blue sm:text-sm text-lg">
           <p>Fall Limited Edition Sneakers</p>
           <p className="mt-1">
             $125.00 x {productAmount}
@@ -38,12 +38,12 @@ export default function Product() {
           src={deleteIcon}
           alt="delete button"
           onClick={deleteProduct}
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer sm:h-auto h-5 w-fit sm:w-auto"
         />
       </div>
       <Link
         href="/purchased"
-        className="w-full bg-Orange text-White rounded-lg py-3 font-bold mt-4 hover:bg-Orange/60  transition-all ease-in-out flex items-center justify-center"
+        className="w-full bg-Orange text-White sm:text-base text-lg sm:rounded-lg rounded-xl sm:py-3 py-5 font-bold sm:mt-4 mt-8 hover:bg-Orange/60  transition-all ease-in-out flex items-center justify-center"
       >
         Checkout
       </Link>

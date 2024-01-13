@@ -5,7 +5,7 @@ import ProductProvider from "../context/productProvider";
 export default function Purchased() {
   return (
     <ProductProvider>
-      <main className="py-2 px-36">
+      <main className="py-2 px-36 ">
         <Header />
         <div className="flex flex-col w-full justify-center items-center h-[75vh] ">
           <h1 className="text-5xl font-bold text-left text-Very-dark-blue">

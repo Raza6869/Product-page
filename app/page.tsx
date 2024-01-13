@@ -2,10 +2,13 @@
 //context
 import ZoomProvider from "./context/zoomProvider";
 import ProductProvider from "./context/productProvider";
+//utils
+import { DeviceSize } from "./utils/deviceResize";
 //components
 import Header from "./components/header";
 import ProductInfo from "./components/productInfo";
 import ProductImages from "./components/productImages";
+import MobileProductImages from "./components/mobileProductsImages";
 
 export default function Home() {
   return (
@@ -13,8 +16,8 @@ export default function Home() {
       <ZoomProvider>
         <main className="py-2 px-36">
           <Header />
-          <div className="flex w-full justify-around items-center h-[75vh] ">
-            <ProductImages />
+          <div className="flex flex-col sm:flex-row w-full justify-around items-center h-[75vh] ">
+            {DeviceSize() < 678 ? <MobileProductImages /> : <ProductImages />}
             <ProductInfo />
           </div>
         </main>
